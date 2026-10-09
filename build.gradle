@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.3.5'
-    id 'io.spring.dependency-management' version '1.1.6'
+    id 'org.springframework.boot' version '3.4.1'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.example'
@@ -16,16 +16,28 @@ repositories {
 }
 
 dependencies {
-    // --- Бэкенд ---
+    // Бэкенд
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // --- Тесты ---
+    // Тесты: этот стартер УЖЕ содержит JUnit 5, AssertJ, Mockito
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'com.codeborne:selenide:7.5.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
+
+    // Selenide (без своих JUnit-зависимостей, чтобы не конфликтовало)
+    testImplementation('com.codeborne:selenide:7.5.1') {
+        exclude group: 'org.junit.jupiter'
+        exclude group: 'org.junit.platform'
+    }
+
+    // Лаунчер для Gradle 8+/9+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-// Чтобы тесты работали через JUnit 5
 test {
     useJUnitPlatform()
+
+    // Полезно для отладки: если тест падает — сразу видно в консоли
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat = "full"
+    }
 }
