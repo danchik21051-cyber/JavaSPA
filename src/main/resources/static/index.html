@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой SPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======= ЭКРАН ЛОГИНА ======= -->
+<div id="login-screen">
+    <h1 id="login-title">Вход в систему</h1>
+
+    <form id="login-form" autocomplete="off">
+        <input type="text"     id="username" placeholder="Логин"    />
+        <input type="password" id="password" placeholder="Пароль"   />
+        <button type="submit"  id="submit-btn">Войти</button>
+    </form>
+
+    <p id="login-error" class="error hidden"></p>
+</div>
+
+<!-- ======= ЭКРАН ПОСЛЕ ЛОГИНА ======= -->
+<div id="app-screen" class="hidden">
+    <h1 id="welcome-title"></h1>
+    <button id="load-btn">Загрузить данные</button>
+    <p id="result"></p>
+    <button id="logout-btn">Выйти</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

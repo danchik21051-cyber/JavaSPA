@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { font-family: sans-serif; text-align: center; margin-top: 60px; }
+
+.hidden { display: none !important; }
+
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 14px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #4a90d9;
+    color: #fff;
+    margin-top: 6px;
+}
+button:hover { background: #357ab8; }
+
+.error { color: #d32f2f; font-weight: bold; }
