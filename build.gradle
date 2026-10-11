@@ -23,7 +23,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     // Selenide (без своих JUnit-зависимостей, чтобы не конфликтовало)
-    testImplementation('com.codeborne:selenide:7.5.1') {
+    testImplementation('com.codeborne:selenide:7.17.0') {
         exclude group: 'org.junit.jupiter'
         exclude group: 'org.junit.platform'
     }

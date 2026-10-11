@@ -7,7 +7,6 @@ import java.util.Map;
 @RequestMapping("/api")
 public class AuthController {
 
-    // Единственный захардкоженный пользователь
     private static final String VALID_USER = "admin";
     private static final String VALID_PASS = "secret123";
 
