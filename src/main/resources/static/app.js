@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 loginScreen.classList.add('hidden');
                 appScreen.classList.remove('hidden');
                 document.getElementById('welcome-title').textContent = data.message;
-                //currentUser = username_value;
             } else {
                 showError(data.message);
             }

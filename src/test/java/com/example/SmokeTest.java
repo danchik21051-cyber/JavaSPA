@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Tag("smoke-front")
 class SmokeTest {
 
     @LocalServerPort
@@ -28,8 +29,6 @@ class SmokeTest {
     void init() {
         Configuration.baseUrl = "http://localhost:" + port;
     }
-
-    // ===================== АВТОРИЗАЦИЯ =====================
 
     @Test
     @DisplayName("Форма логина отображается при открытии")
@@ -84,7 +83,6 @@ class SmokeTest {
         appPage.screen.shouldBe(hidden);
     }
 
-    // ===================== ДАННЫЕ =====================
 
     @Test
     @DisplayName("После логина кнопка «Показать сообщение» работает")
